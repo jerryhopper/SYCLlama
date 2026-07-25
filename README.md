@@ -343,20 +343,3 @@ The script auto-detects `SYCL_DEVICE_INDEX` and sets up the following environmen
 - `ONEAPI_DEVICE_SELECTOR=level_zero:${SYCL_DEVICE_INDEX}`
 
 No extra config needed.
-
-## Migration from start_model.sh
-
-| Old Variable | New Variable | Notes |
-|---|---|---|
-| `GGUF` | `MODEL` | Direct replacement |
-| `MMPROJ` | `MMPOJ` | Renamed (shorter) |
-| `CTX_SIZE` | `CTX_SIZE` | Unchanged |
-| `CACHE_K` | `CACHE_TYPE_K` | Renamed |
-| `CACHE_V` | `CACHE_TYPE_V` | Renamed |
-| `SPEC_DRAFT` | `SPEC_DRAFT` | Unchanged |
-| `CTX_CHECKPOINTS` | `CTX_CHECKPOINTS` | Unchanged |
-| `HOST` | `HOST` | Unchanged |
-| `PORT` | `PORT` | Unchanged |
-| `SYCL_DEVICE_INDEX` | `SYCL_DEVICE_INDEX` | Unchanged |
-
-
