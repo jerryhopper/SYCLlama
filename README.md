@@ -1,15 +1,11 @@
-# SYCLlama
-llama-server with sycl backend.
-
-
-# start_modelv2.sh â€” Universal llama-server Launcher
+# start_modelv2.sh — Universal llama-server Launcher
 
 A single script that maps **all** llama-server CLI parameters to environment variables. Drop-in replacement for the old `start_model.sh` with full parameter coverage.
 
 ## Quick Start
 
 ```bash
-# Minimal â€” just set model and port
+# Minimal — just set model and port
 export MODEL=/models/Qwen3-Embedding-0.6B-Q8_0.gguf
 export PORT=8080
 ./src/start_modelv2.sh
