@@ -1,0 +1,37 @@
+#
+services:
+  sycllamaserver:
+    build: ./src
+    image: sycllama:latest
+    environment:
+      - MODEL=/models/Qwen3.6-35B-A3B/Qwen3.6-35B-A3B-Q4_K_M.gguf
+      - MMPOJ=/models/Qwen3.6-35B-A3B/mmproj-Qwen3.6-35B-A3B-f16.gguf
+      - CHAT_TEMPLATE_FILE=/models/Qwen3.6-35B-A3B/chat_template.jinja 
+      - CTX_SIZE=162144
+      - HOST=0.0.0.0
+      - PORT=8080
+      - POLL=0
+      - THREADS=4
+      - THREADS_BATCH=4
+      - N_GPU_LAYERS=999
+      - LOG_VERBOSITY=5
+      - OFFLINE=
+      - FLASH_ATTN=on
+      - SYCL_DEVICE_INDEX=0
+    ports:
+      - "8080:8080"
+    volumes:
+      - /models:/models:z
+    devices:
+      - /dev/dri:/dev/dri
+    group_add:
+      - video
+      - render
+    security_opt:
+      - seccomp=unconfined
+    restart: unless-stopped
+    cpus: 4.0
+    mem_limit: "24g"
+
+
+
